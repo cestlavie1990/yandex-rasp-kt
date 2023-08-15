@@ -1,0 +1,34 @@
+server:
+  port: 8080
+
+logging:
+  level:
+    root: info
+
+spring:
+  application:
+    name: "yandex-rasp-kotlin"
+
+  datasource:
+    url: "jdbc:h2:mem:rasp"
+    username: "rasp"
+    password: "rasp"
+    driverClassName: "org.h2.Driver"
+
+  jpa:
+    database-platform: "org.hibernate.dialect.H2Dialect"
+    properties:
+      hibernate:
+        format_sql: true
+        globally_quoted_identifiers: true
+        globally_quoted_identifiers_skip_column_definitions: true
+        order_inserts: true
+        order_updates: true
+        jdbc:
+          batch_size: 100
+      query:
+        in_clause_parameter_padding: true
+    show-sql: true
+    generate-ddl: false
+    hibernate:
+      ddl-auto: validate
