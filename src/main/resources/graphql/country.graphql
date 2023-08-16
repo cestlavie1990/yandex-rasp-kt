@@ -1,0 +1,14 @@
+extend type Query {
+    country(id: ID!): Country!
+    countries: [Country!]!
+}
+
+extend type Mutation {
+    refreshCountries: Int!
+}
+
+type Country {
+    id: ID!
+    code: Code!
+    title: String
+}

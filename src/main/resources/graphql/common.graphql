@@ -1,0 +1,11 @@
+type Query {}
+
+type Mutation {}
+
+scalar Date
+scalar DateTime
+
+type Code {
+    esrCode: String
+    yandexCode: String
+}
