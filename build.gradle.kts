@@ -4,6 +4,7 @@ plugins {
     id("org.springframework.boot") version "3.1.2"
     id("io.spring.dependency-management") version "1.1.2"
     kotlin("jvm") version "1.8.22"
+    kotlin("kapt") version "1.8.22"
     kotlin("plugin.spring") version "1.8.22"
     kotlin("plugin.jpa") version "1.8.22"
     kotlin("plugin.allopen") version "1.8.22"
@@ -28,6 +29,9 @@ dependencies {
     implementation("org.flywaydb:flyway-core")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("com.graphql-java:graphql-java-extended-scalars:20.2")
+    implementation("org.mapstruct:mapstruct:1.5.5.Final")
+
+    kapt("org.mapstruct:mapstruct-processor:1.5.5.Final")
 
     developmentOnly("org.springframework.boot:spring-boot-devtools")
 
