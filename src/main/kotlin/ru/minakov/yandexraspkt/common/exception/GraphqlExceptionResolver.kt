@@ -16,8 +16,8 @@ class GraphqlExceptionResolver : DataFetcherExceptionResolverAdapter() {
         val error = GraphqlErrorBuilder.newError(env)
             .message(ex.message.orEmpty())
             .errorType(ErrorType.INTERNAL_ERROR)
-            .path(env.getExecutionStepInfo().getPath())
-            .location(env.getField().getSourceLocation())
+            .path(env.executionStepInfo.path)
+            .location(env.field.sourceLocation)
 
         if (ex is EntityNotFoundException) error.errorType(ErrorType.NOT_FOUND)
 
