@@ -22,7 +22,5 @@ class CountryController(
     fun countries(): Collection<Country> = service.getAll(mapper::map)
 
     @MutationMapping
-    fun refreshCountries(): Int {
-        throw UnsupportedOperationException("Not supported yet")
-    }
+    fun refreshCountries(): Int = service.refreshAll()
 }

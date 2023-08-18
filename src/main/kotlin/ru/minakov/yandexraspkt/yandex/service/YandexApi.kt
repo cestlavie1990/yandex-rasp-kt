@@ -16,8 +16,8 @@ interface YandexApi {
     ): StationListDto
 
     companion object {
-        private const val AUTH_HEADER = "Authorization"
-        private const val DEFAULT_LANG = "ru_RU"
-        private const val DEFAULT_JSON = "json"
+        const val AUTH_HEADER = "Authorization"
+        const val DEFAULT_LANG = "ru_RU"
+        const val DEFAULT_JSON = "json"
     }
 }
