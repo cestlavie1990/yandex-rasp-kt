@@ -38,3 +38,13 @@ spring:
       fileExtensions: ".graphqls,.gqls,.graphql"
     graphiql:
       enabled: true
+
+app:
+  feign:
+    client:
+      yandex:
+        rasp:
+          api-key: "${YANDEX_RASP_KEY}"
+          url: "https://api.rasp.yandex.net/v3.0"
+          connect-timeout: 5000
+          read-timeout: 5000

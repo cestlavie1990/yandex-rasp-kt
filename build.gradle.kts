@@ -30,7 +30,11 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("com.graphql-java:graphql-java-extended-scalars:20.2")
     implementation("org.mapstruct:mapstruct:1.5.5.Final")
+    implementation("org.springframework.cloud:spring-cloud-starter-openfeign:4.0.4")
+    implementation("io.github.openfeign:feign-okhttp:12.4")
+    implementation("io.github.openfeign:feign-jackson:12.4")
 
+    kapt("org.springframework.boot:spring-boot-configuration-processor")
     kapt("org.mapstruct:mapstruct-processor:1.5.5.Final")
 
     developmentOnly("org.springframework.boot:spring-boot-devtools")
