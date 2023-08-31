@@ -10,13 +10,12 @@ spring:
     name: "yandex-rasp-kotlin"
 
   datasource:
-    url: "jdbc:h2:mem:rasp"
-    username: "rasp"
-    password: "rasp"
-    driverClassName: "org.h2.Driver"
+    url: "jdbc:postgresql://${DB_URL}/yandex_rasp_db"
+    username: "${DB_USER}"
+    password: "${DB_PASSWORD}"
+    driverClassName: "org.postgresql.Driver"
 
   jpa:
-    database-platform: "org.hibernate.dialect.H2Dialect"
     properties:
       hibernate:
         format_sql: true

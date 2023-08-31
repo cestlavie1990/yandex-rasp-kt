@@ -1,14 +1,14 @@
 DROP TABLE IF EXISTS "station";
 CREATE TABLE "station"
 (
-    "id"             UUID                        NOT NULL DEFAULT "RANDOM_UUID"(),
+    "id"             UUID                        NOT NULL DEFAULT uuid_generate_v4(),
     "settlement_id"  UUID                        NOT NULL,
-    "esr_code"       VARCHAR,
-    "yandex_code"    VARCHAR,
-    "title"          VARCHAR,
-    "direction"      VARCHAR,
-    "station_type"   VARCHAR,
-    "transport_type" VARCHAR,
+    "esr_code"       TEXT,
+    "yandex_code"    TEXT,
+    "title"          TEXT,
+    "direction"      TEXT,
+    "station_type"   TEXT,
+    "transport_type" TEXT,
     "latitude"       DOUBLE PRECISION,
     "longitude"      DOUBLE PRECISION,
     "created_at"     TIMESTAMP WITHOUT TIME ZONE NOT NULL DEFAULT NOW(),
@@ -18,11 +18,11 @@ CREATE TABLE "station"
 DROP TABLE IF EXISTS "settlement";
 CREATE TABLE "settlement"
 (
-    "id"          UUID                        NOT NULL DEFAULT "RANDOM_UUID"(),
+    "id"          UUID                        NOT NULL DEFAULT uuid_generate_v4(),
     "region_id"   UUID                        NOT NULL,
-    "esr_code"    VARCHAR,
-    "yandex_code" VARCHAR,
-    "title"       VARCHAR,
+    "esr_code"    TEXT,
+    "yandex_code" TEXT,
+    "title"       TEXT,
     "created_at"  TIMESTAMP WITHOUT TIME ZONE NOT NULL DEFAULT NOW(),
     "updated_at"  TIMESTAMP WITHOUT TIME ZONE NOT NULL DEFAULT NOW()
 );
@@ -30,11 +30,11 @@ CREATE TABLE "settlement"
 DROP TABLE IF EXISTS "region";
 CREATE TABLE "region"
 (
-    "id"          UUID                        NOT NULL DEFAULT "RANDOM_UUID"(),
+    "id"          UUID                        NOT NULL DEFAULT uuid_generate_v4(),
     "country_id"  UUID                        NOT NULL,
-    "esr_code"    VARCHAR,
-    "yandex_code" VARCHAR,
-    "title"       VARCHAR,
+    "esr_code"    TEXT,
+    "yandex_code" TEXT,
+    "title"       TEXT,
     "created_at"  TIMESTAMP WITHOUT TIME ZONE NOT NULL DEFAULT NOW(),
     "updated_at"  TIMESTAMP WITHOUT TIME ZONE NOT NULL DEFAULT NOW()
 );
@@ -42,10 +42,10 @@ CREATE TABLE "region"
 DROP TABLE IF EXISTS "country";
 CREATE TABLE "country"
 (
-    "id"          UUID                        NOT NULL DEFAULT "RANDOM_UUID"(),
-    "esr_code"    VARCHAR,
-    "yandex_code" VARCHAR,
-    "title"       VARCHAR,
+    "id"          UUID                        NOT NULL DEFAULT uuid_generate_v4(),
+    "esr_code"    TEXT,
+    "yandex_code" TEXT,
+    "title"       TEXT,
     "created_at"  TIMESTAMP WITHOUT TIME ZONE NOT NULL DEFAULT NOW(),
     "updated_at"  TIMESTAMP WITHOUT TIME ZONE NOT NULL DEFAULT NOW()
 );
