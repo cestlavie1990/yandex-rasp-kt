@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    url: "jdbc:postgresql://localhost:15432/yandex_rasp_db"
+    username: "postgres"
+    password: "postgres"
+    driverClassName: "org.postgresql.Driver"
