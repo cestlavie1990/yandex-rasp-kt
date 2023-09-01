@@ -13,7 +13,8 @@ services:
       DB_PASSWORD: postgres
       DB_URL: postgres
     depends_on:
-      - postgres
+      postgres:
+        condition: service_healthy
 
   postgres:
     image: postgres:15.4
@@ -26,9 +27,12 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       PGDATA: /data/postgres
-
     networks:
       - backend
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-U", "postgres" ]
+      interval: 5s
+      retries: 10
 
 networks:
   backend:
